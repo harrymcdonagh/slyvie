@@ -17,8 +17,17 @@ import {
   CollapsibleContent,
 } from "@/components/ui/collapsible";
 
-import { Cat, User, Calendar, Settings, MessageCircle, ChevronDown } from "lucide-react";
+import {
+  Cat,
+  User,
+  Calendar,
+  Settings,
+  MessageCircle,
+  ChevronDown,
+  PlusIcon,
+} from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
+import { Button } from "./button";
 
 const items = [
   {
@@ -76,6 +85,10 @@ export function AppSidebar() {
         </div>
       </SidebarHeader>
       <SidebarContent>
+        <Button variant="ghost" className="mx-2">
+          <PlusIcon className="mr-2 h-4 w-4" />
+          New Chat
+        </Button>
         <SidebarGroup>
           <SidebarGroupLabel>Account</SidebarGroupLabel>
           <SidebarGroupContent>
