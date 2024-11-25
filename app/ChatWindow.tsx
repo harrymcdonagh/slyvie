@@ -43,7 +43,7 @@ export default function ChatWindow() {
   };
 
   return (
-    <div className="flex flex-col h-full w-full max-w-4xl mx-auto border rounded-lg overflow-hidden">
+    <div className="flex flex-col h-full w-full mx-auto border rounded-lg overflow-hidden">
       <ScrollArea className="flex-grow p-4">
         {messages.map((message) => (
           <div
@@ -63,7 +63,9 @@ export default function ChatWindow() {
             </Avatar>
             <span
               className={`inline-block p-2 rounded-lg ${
-                message.sender === "user" ? "bg-primary text-primary-foreground" : "bg-muted"
+                message.sender === "user"
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-muted"
               }`}
             >
               {message.text}
