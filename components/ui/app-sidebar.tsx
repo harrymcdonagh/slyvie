@@ -1,3 +1,4 @@
+"use client";
 import {
   Sidebar,
   SidebarContent,
@@ -26,7 +27,6 @@ import {
   ChevronDown,
   PlusIcon,
 } from "lucide-react";
-import { ModeToggle } from "./mode-toggle";
 import { Button } from "./button";
 
 const items = [
@@ -74,24 +74,29 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader>
-        <div className="flex justify-between items-center">
+        <div className="px-4 py-3 flex justify-center items-center">
           <div className="flex items-center">
-            <Cat className="text-orange-400" />
-            <h1 className="text-lg font-semibold text-foreground ml-2">Sylvie</h1>
-          </div>
-          <div>
-            <ModeToggle />
+            <div className="p-2">
+              <Cat className="text-orange-500 w-6 h-6" strokeWidth={2} />
+            </div>
+            <h1 className="text-xl font-bold text-foreground tracking-tight">Sylvie</h1>
           </div>
         </div>
       </SidebarHeader>
       <SidebarContent>
         <Button variant="ghost" className="mx-2">
-          <PlusIcon className="mr-2 h-4 w-4" />
+          <PlusIcon className="h-4 w-4" />
           New Chat
         </Button>
         <SidebarGroup>
           <SidebarGroupLabel>Account</SidebarGroupLabel>
           <SidebarGroupContent>
+            {/* <SidebarMenu className="py-3">
+              <Button variant="ghost" className="mx-2 border">
+              Login
+              </Button>
+              <Button className="mx-2 border border-orange-400">Register</Button>
+            </SidebarMenu> */}
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>

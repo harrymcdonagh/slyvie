@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/ui/app-sidebar";
-import { ThemeProvider } from "@/components/ui/theme-provider";
+import { ThemeProvider } from "next-themes";
+import { inter } from "@/app/ui/fonts";
 
 export const metadata: Metadata = {
   title: "Sylvie",
@@ -12,10 +13,10 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="flex h-screen overflow-hidden">
+      <body className={`${inter.className} antialiased flex h-screen overflow-hidden`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
